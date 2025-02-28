@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Que Gato é Você?</title>
     <link rel="stylesheet" href="../static/style.css">
+    <title>Que gato é você?</title>
 </head>
 <body>
     <header>
-        <h1>Que Gato é Você</h1>
+        <img src="../static/gatos/gatovazio.png" alt="logo" style="height: 70px;">
+        <h1>Que gato é você?</h1>
     </header>
-        <main>
-            <div class="container">
-                <div class="form">
-                    <form action="/" method="post">
-                        <label>Informe seu nome</label>
-                        <input type="text" name="nome">
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-                <div class="gato">
-                    {% if not url_imagem %}
-                    <img src="../static/gatos/gatovazio.png" alt="Gato" />
-                    
-                    {% else %}
-                        <img src="{{ url_imagem }}" alt="">
-                    <p>{{ nome }}</p>
-                    {% endif %}
-                    {% if erro %}
-                    {{ erro }}
-                    {% endif %}
-                </div>
+    <main>
+        <div class="container">
+            <div class="form">
+                <form action="/" method="post">
+                    <label>Informe seu nome</label>
+                    <input type="text" name="nome" />
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
-        </main>
+            <div class="gato">
+                {% if not url_imagem %}
+                    <img src="../static/gatos/gatonada.jpg" alt="..." />
+                {% else %}
+                    <img src="{{url_imagem}}" />
+                    <p>{{ nome }}</p>
+                {% endif %}
+                {% if erro %}
+                    <p>{{ erro }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
     <footer>
-        <p>Desenvolvido por <a href="https://github.com/paulo-henrique-santos" target="_blank">Paulo Henrique dos Santos</a></p>
+        <p>Desenvolvido por <a href="https://github.com/paulo-henrique-santos">Paulo Henrique dos Santos</a></p>
     </footer>
 </body>
 </html>
